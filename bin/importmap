@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative "../config/application"
+require "importmap/commands"
+require "https://code.jquery.com/jquery-3.6.0.min.js"

@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="ui container">
+  <div class="ui clearing segment">
+		<table class="ui table">
+		  <thead>
+		    <tr>
+		      <th>Building Number</th>
+		      <th>Name</th>
+		      <th>City</th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <% @user.each do |key,value|%>
+		    <tr>
+		      <td><%= key %></td>
+		      <td><%=value["name"]%></td>
+		      <td><%=value["city"]%></td>
+		      <td><%= link_to "Back to list",  users_path %></td>
+		    </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+		</div>
+	</div>
+
+
+
+

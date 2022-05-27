@@ -1,0 +1,41 @@
+<h1 style="margin-left: 700px; margin-top: 40px;"></h1>
+<div class="ui container">
+  <div class="ui clearing segment">
+  <p style="color: green"><%= notice %></p>
+  <h1>Editing list</h1>
+    <%= form_with(model: @user,url: "/users/#{params['id']}", method: :patch ) do |form| %>
+			 <div class="ui container">
+        <div class="ui form">
+          <div class="field" style="width:200px;">
+              <%= form.label :building_number%>
+              <%= form.text_field :building_number %>
+          </div>     
+          <div class="field" style="width:200px;">
+              <%= form.label :name %>
+              <%= form.text_field :name %>
+            </div>
+          <div class="field" style="width:200px;">
+              <%= form.label :city %>
+              <%= form.select :city,  options_for_select(options_for_status), {:class => "selectpicker",:include_blank => true },{multiple: true}%>
+          </div>
+          <div class="field" style="width:200px;">
+              <%= form.label :date %>
+
+              <%= form.date_field :date %>
+            </div>
+          <div class="field">
+            <%= form.submit "Update" %>
+          </div>
+        </div>
+      </div> 
+    <% end %>
+  </div>
+</div>
+
+<script >
+  $('select').selectpicker();
+
+</script>
+
+<br>
+
